@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Il Mio Giornale</title>
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+            background-color: #f4f1ea;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px solid black;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 14px;
+            color: gray;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            column-count: 2;
+            column-gap: 40px;
+        }
+
+        article h2 {
+            column-span: all;
+            font-size: 32px;
+        }
+
+        .meta {
+            column-span: all;
+            font-size: 14px;
+            color: gray;
+            margin-bottom: 20px;
+        }
+
+        .image-section {
+            column-span: all;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+
+        input[type="file"] {
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 12px;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            margin-top: 20px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>IL QUOTIDIANO</h1>
+    <p>Notizie, cultura e attualità</p>
+</header>
+
+<div class="container">
+    <article>
+        <h2>Titolo dell'Articolo Principale</h2>
+        <div class="meta">Di Redazione • 10 Aprile 2026</div>
+
+        <div class="image-section">
+            <img id="preview" src="" alt="Anteprima immagine">
+            <br>
+            <input type="file" accept="image/*" onchange="loadImage(event)">
+        </div>
+
+        <p>
+            Questo è un esempio di articolo in stile giornale. Il testo è distribuito su più colonne
+            per simulare l’impaginazione tipica dei quotidiani cartacei. Puoi scrivere qui il contenuto
+            dell’articolo, includendo notizie, approfondimenti e storie.
+        </p>
+
+        <p>
+            L'immagine sopra può essere caricata direttamente dal tuo computer grazie al selettore file.
+            Una volta scelta, verrà mostrata in anteprima all’interno dell’articolo.
+        </p>
+
+        <p>
+            Questo layout utilizza uno stile classico con font serif, colori neutri e una struttura
+            pulita per richiamare l’aspetto dei giornali tradizionali.
+        </p>
+    </article>
+</div>
+
+<footer>
+    © 2026 Il Quotidiano - Tutti i diritti riservati
+</footer>
+
+<script>
+    function loadImage(event) {
+        const image = document.getElementById('preview');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>
+
+</body>
+</html>
